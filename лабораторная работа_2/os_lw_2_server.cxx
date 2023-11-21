@@ -36,8 +36,8 @@ void sigBlocking()
 int main()
 {
       int supersock = socket(AF_INET, SOCK_STREAM, 0);
-      int client, acception, len, maxFd, num=0;
-      vector <int> clients;
+      int client, acception, len, maxFd;
+     // vector <int> clients;
       char buf[1024];
       
       if(supersock < 0)
@@ -124,7 +124,6 @@ int main()
 			  {
 				  close(client);
 				  FD_CLR(client, &server_fds);
-				  clients.pop_back();
 			  }
 			  cout <<len<<endl;
 		  }
