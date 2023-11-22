@@ -123,6 +123,7 @@ int main()
 			  if(len<=0)
 			  {
 				  close(client);
+				  client = 0;
 				  FD_CLR(client, &server_fds);
 			  }
 			  cout <<len<<endl;
