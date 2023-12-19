@@ -24,7 +24,6 @@ static ssize_t procfile_read(struct file *file_pointer, char __user *buffer, siz
    else {len=sprintf(s, "0 - odd number of times");}
    copy_to_user(buffer, s, len); 
    pr_info("procfile read %s\n",file_pointer->f_path.dentry->d_name.name);
-   *offset+=len;
    fl=1;
    return len;
 }
